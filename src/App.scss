@@ -74,7 +74,7 @@ body {
         border-radius: 30px;
         transition: background-color 0.3s ease 0s;
         &:hover {
-            background-color: #f24701;
+            background-color: #dc1f00;
         }
         span {
             font-size: 16px;
@@ -124,7 +124,8 @@ body {
 .filter {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
+    align-items: center;
+    margin: 40px 0;
     flex-wrap: wrap;
     &__types {}
     &__sort {
@@ -185,24 +186,23 @@ body {
         display: flex;
         li {
             margin: 0 10px 0 0;
-            a {
-                font-size: 16px;
-                font-weight: 800;
-                color: #2c2c2c;
-                background-color: #f9f9f9;
-                border-radius: 30px;
-                padding: 10px 20px;
-                transition: background-color 0.3s ease 0s;
-                &:hover {
-                    background-color: #e5e5e5;
-                }
-                &.active {
-                    background-color: #282828;
-                    color: #fff;
-                }
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 800;
+            color: #2c2c2c;
+            background-color: #f9f9f9;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease 0s;
+            &:hover {
+                background-color: #e5e5e5;
+            }
+            &.active {
+                background-color: #282828;
+                color: #fff;
             }
             @media (max-width: 1150px) {
-                margin: 0 10px 40px 0;
+                margin: 0 10px 20px 0;
             }
         }
         @media (max-width: 1150px) {

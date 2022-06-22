@@ -1,9 +1,11 @@
+import logo from '../assets/img/logo.png';
+
 function Header() {
     return (
         <header className="header">
             <a href="" className="header__logo logo">
                 <div className="logo__image">
-                    <img src="/images/logo.png" width={38} height={38} alt="logo"/>
+                    <img src={logo} width={38} height={38} alt="logo"/>
                 </div>
                 <div className="logo__text">
                     <div className="logo__title">REACT PIZZA</div>
