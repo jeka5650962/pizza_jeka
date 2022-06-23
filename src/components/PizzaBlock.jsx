@@ -2,11 +2,31 @@ import React from 'react';
 
 function PizzaBlock({title, image, price}) {
 
+    /* ------------------------------------------------------------------------------------------ pizzaCount useState */
+
     const [pizzaCount, setPizzaCount] = React.useState(0);
 
     const onClickAdd = () => {
         setPizzaCount(pizzaCount + 1);
     };
+
+    /* ----------------------------------------------------------------------------------------------- dough useState */
+
+    const [activeIndexDough, setActiveIndexDough] = React.useState('traditional');
+
+    const onClickDough = (index) => {
+        setActiveIndexDough(index);
+    };
+
+    /* -------------------------------------------------------------------------------------------- diameter useState */
+
+    const [activeIndexDiametr, setActiveIndexDiametr] = React.useState(30);
+
+    const onClickDiameter = (index) => {
+        setActiveIndexDiametr(index);
+    };
+
+    /* ------------------------------------------------------------------------------------------------------- return */
 
     return (
         <div className="content__column pizza">
@@ -16,13 +36,23 @@ function PizzaBlock({title, image, price}) {
             <div className="pizza__name">{title}</div>
             <div className="pizza__options options">
                 <ul className="options__dough">
-                    <li>тонкое</li>
-                    <li className="active">традиционное</li>
+                    <li
+                        onClick={ () => {onClickDough('thin')} }
+                        className={ activeIndexDough === 'thin' ? 'active' : '' }>тонкое</li>
+                    <li
+                        onClick={ () => {onClickDough('traditional')} }
+                        className={ activeIndexDough === 'traditional' ? 'active' : '' }>традиционное</li>
                 </ul>
                 <ul className="options__diameter">
-                    <li>26 см</li>
-                    <li className="active">30 см</li>
-                    <li>40 см</li>
+                    <li
+                        onClick={ () => {onClickDiameter(26)} }
+                        className={ activeIndexDiametr === 26 ? 'active' : '' }>26 см</li>
+                    <li
+                        onClick={ () => {onClickDiameter(30)} }
+                        className={ activeIndexDiametr === 30 ? 'active' : '' }>30 см</li>
+                    <li
+                        onClick={ () => {onClickDiameter(40)} }
+                        className={ activeIndexDiametr === 40 ? 'active' : '' }>40 см</li>
                 </ul>
             </div>
             <div className="pizza__bottom">
