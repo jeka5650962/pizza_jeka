@@ -153,7 +153,7 @@ body {
 .popup {
     display: none;
     position: absolute;
-    top: 30px;
+    top: 40px;
     right: 0;
     z-index: 10;
     &__list {
@@ -242,36 +242,22 @@ body {
         &__dough {
             display: flex;
             margin: 0 0 7px 0;
-            li {
-                flex: 0 1 50%;
-                font-weight: 800;
-                height: 32px;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &.active {
-                    background-color: #fff;
-                    border: 1px solid #fff;
-                    border-radius: 5px;
-                }
-            }
         }
         &__diameter {
             display: flex;
-            li {
-                flex: 0 1 33.333%;
-                font-weight: 800;
-                height: 32px;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &.active {
-                    background-color: #fff;
-                    border: 1px solid #fff;
-                    border-radius: 5px;
-                }
+        }
+        li {
+            flex: 1 1 auto;
+            font-weight: 800;
+            height: 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.active {
+                background-color: #fff;
+                border: 1px solid #fff;
+                border-radius: 5px;
             }
         }
     }

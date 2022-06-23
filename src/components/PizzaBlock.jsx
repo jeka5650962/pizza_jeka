@@ -1,8 +1,6 @@
 import React from 'react';
 
-function PizzaBlock({title, image, price}) {
-
-    /* ------------------------------------------------------------------------------------------ pizzaCount useState */
+function PizzaBlock({title, imageUrl, price, sizes, types}) {
 
     const [pizzaCount, setPizzaCount] = React.useState(0);
 
@@ -10,51 +8,34 @@ function PizzaBlock({title, image, price}) {
         setPizzaCount(pizzaCount + 1);
     };
 
-    /* ----------------------------------------------------------------------------------------------- dough useState */
+    const [activeIndexType, setActiveIndexType] = React.useState(0);
 
-    const [activeIndexDough, setActiveIndexDough] = React.useState(1);
+    const [activeIndexDiameter, setActiveIndexDiameter] = React.useState(0);
 
-    const onClickDough = (index) => {
-        setActiveIndexDough(index);
-    };
-
-    /* -------------------------------------------------------------------------------------------- diameter useState */
-
-    const [activeIndexDiameter, setActiveIndexDiameter] = React.useState(1);
-
-    const onClickDiameter = (index) => {
-        setActiveIndexDiameter(index);
-    };
-
-    /* ------------------------------------------------------------------------------------------------------- Arrays */
-
-    const typesOfDough = ['тонкое', 'традиционное'];
-    const pizzaDiameters = ['26 см', '30 см', '40 см'];
-
-    /* ------------------------------------------------------------------------------------------------------- return */
+    const typeNames = ['тонкое', 'традиционное'];
 
     return (
         <div className="content__column pizza">
             <div className="pizza__image">
-                <img src={image} alt=""/>
+                <img src={imageUrl} alt="pizza"/>
             </div>
             <div className="pizza__name">{title}</div>
             <div className="pizza__options options">
                 <ul className="options__dough">
-                    {typesOfDough.map((value, i) => {
+                    {types.map((typeId) => {
                         return (
                             <li
-                                onClick={ () => {onClickDough(i)} }
-                                className={activeIndexDough === i ? 'active' : ''}>{value}</li>
+                                onClick={() => setActiveIndexType(typeId)}
+                                className={activeIndexType === typeId ? 'active' : ''}>{typeNames[typeId]}</li>
                         )
                     })}
                 </ul>
                 <ul className="options__diameter">
-                    {pizzaDiameters.map((value, i) => {
+                    {sizes.map((size, i) => {
                         return (
                             <li
-                                onClick={ () => {onClickDiameter(i)} }
-                                className={ activeIndexDiameter === i ? 'active' : '' }>{value}</li>
+                                onClick={() => setActiveIndexDiameter(i)}
+                                className={activeIndexDiameter === i ? 'active' : ''}>{size} см</li>
                         )
                     })}
                 </ul>
