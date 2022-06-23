@@ -20,10 +20,10 @@ function PizzaBlock({title, image, price}) {
 
     /* -------------------------------------------------------------------------------------------- diameter useState */
 
-    const [activeIndexDiametr, setActiveIndexDiametr] = React.useState(30);
+    const [activeIndexDiameter, setActiveIndexDiameter] = React.useState(30);
 
     const onClickDiameter = (index) => {
-        setActiveIndexDiametr(index);
+        setActiveIndexDiameter(index);
     };
 
     /* ------------------------------------------------------------------------------------------------------- return */
@@ -46,13 +46,13 @@ function PizzaBlock({title, image, price}) {
                 <ul className="options__diameter">
                     <li
                         onClick={ () => {onClickDiameter(26)} }
-                        className={ activeIndexDiametr === 26 ? 'active' : '' }>26 см</li>
+                        className={ activeIndexDiameter === 26 ? 'active' : '' }>26 см</li>
                     <li
                         onClick={ () => {onClickDiameter(30)} }
-                        className={ activeIndexDiametr === 30 ? 'active' : '' }>30 см</li>
+                        className={ activeIndexDiameter === 30 ? 'active' : '' }>30 см</li>
                     <li
                         onClick={ () => {onClickDiameter(40)} }
-                        className={ activeIndexDiametr === 40 ? 'active' : '' }>40 см</li>
+                        className={ activeIndexDiameter === 40 ? 'active' : '' }>40 см</li>
                 </ul>
             </div>
             <div className="pizza__bottom">
