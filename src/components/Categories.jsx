@@ -6,9 +6,9 @@ function Categories() {
 
     const [activeIndex, setActiveIndex] = React.useState(0);
 
-    const onClickCategory = (index) => {
-        setActiveIndex(index);
-    };
+    // const onClickCategory = (index) => {
+    //     setActiveIndex(index);
+    // };
 
     /* ------------------------------------------------------------------------------------------------------- Arrays */
 
@@ -19,11 +19,12 @@ function Categories() {
     return (
         <div className="filter__types types">
             <ul className="types__list">
-                {categories.map((value, i) => {
+                {categories.map((value, index) => {
                     return (
                         <li
-                            onClick={ () => {onClickCategory(i)} }
-                            className={activeIndex === i ? 'active' : ''}>{value}</li>
+                            onClick={ () => {setActiveIndex(index)} }
+                            key={index}
+                            className={activeIndex === index ? 'active' : ''}>{value}</li>
                     )
                 })}
             </ul>

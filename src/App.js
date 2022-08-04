@@ -17,8 +17,8 @@ function App() {
                     </div>
                     <h1>Все пиццы</h1>
                     <div className="content__body">
-                        {pizzas.map(obj =>
-                            <PizzaBlock {...obj} />)}
+                        {pizzas.map((obj, id) =>
+                            <PizzaBlock {...obj} key={id}/>)}
                     </div>
                 </main>
             </div>

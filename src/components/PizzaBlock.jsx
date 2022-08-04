@@ -22,20 +22,22 @@ function PizzaBlock({title, imageUrl, price, sizes, types}) {
             <div className="pizza__name">{title}</div>
             <div className="pizza__options options">
                 <ul className="options__dough">
-                    {types.map((typeId) => {
+                    {types.map((typeId, id) => {
                         return (
                             <li
                                 onClick={() => setActiveIndexType(typeId)}
+                                key={id}
                                 className={activeIndexType === typeId ? 'active' : ''}>{typeNames[typeId]}</li>
                         )
                     })}
                 </ul>
                 <ul className="options__diameter">
-                    {sizes.map((size, i) => {
+                    {sizes.map((size, id) => {
                         return (
                             <li
-                                onClick={() => setActiveIndexDiameter(i)}
-                                className={activeIndexDiameter === i ? 'active' : ''}>{size} см</li>
+                                onClick={() => setActiveIndexDiameter(id)}
+                                key={id}
+                                className={activeIndexDiameter === id ? 'active' : ''}>{size} см</li>
                         )
                     })}
                 </ul>

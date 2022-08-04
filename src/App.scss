@@ -151,7 +151,6 @@ body {
 }
 
 .popup {
-    display: none;
     position: absolute;
     top: 40px;
     right: 0;
@@ -159,8 +158,9 @@ body {
     &__list {
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+        box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
         overflow: hidden;
+        min-width: 150px;
     }
     &__item {
         font-weight: 400;
@@ -168,12 +168,11 @@ body {
         padding: 10px 14px;
         cursor: pointer;
         &:hover {
-            background-color: rgba(254, 95, 30, 0.05);
+            background-color: rgba(254, 95, 30, 0.1);
         }
         &.active {
             font-weight: 700;
             color: #fe5f1e;
-            background-color: rgba(254, 95, 30, 0.05);
         }
         &:last-child {
             margin: 0;
@@ -233,7 +232,7 @@ body {
     }
     &__options {
         width: 280px;
-        background-color: #f3f3f3;
+        background-color: #e5e5e5;
         border-radius: 10px;
         margin: 0 0 17px 0;
     }
