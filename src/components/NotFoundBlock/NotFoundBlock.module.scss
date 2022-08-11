@@ -1,0 +1,42 @@
+.block {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 100px 50px;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+}
+
+.subtitle {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0 0 20px 0;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 0 0 20px 0;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #fe5f1e;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fe5f1e;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        background-color: #fe5f1e;
+        color: #fff;
+    }
+}

@@ -1,9 +1,10 @@
 import logo from '../assets/img/logo.png';
+import {Link} from "react-router-dom";
 
 function Header() {
     return (
         <header className="header">
-            <a href="" className="header__logo logo">
+            <Link to="/" className="header__logo logo">
                 <div className="logo__image">
                     <img src={logo} width={38} height={38} alt="logo"/>
                 </div>
@@ -11,9 +12,9 @@ function Header() {
                     <div className="logo__title">REACT PIZZA</div>
                     <div className="logo__subtitle">самая вкусная пицца во вселенной</div>
                 </div>
-            </a>
+            </Link>
             <div className="header__info info">
-                <a href="" className="info__button">
+                <Link to="/cart" className="info__button">
                     <span>520 ₽</span>
                     <div className="info__delimiter"></div>
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -29,7 +30,7 @@ function Header() {
                             stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     <span>3</span>
-                </a>
+                </Link>
             </div>
         </header>
     )
