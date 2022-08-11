@@ -1,6 +1,8 @@
+import CartBlock from "../components/CartBlock";
+
 const Cart = () => {
     return (
-        <h1>Корзина</h1>
+        <CartBlock/>
     )
 }
 
