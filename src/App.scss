@@ -266,7 +266,7 @@ body {
         justify-content: space-between;
     }
     &__price {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 800;
         color: #000;
     }
@@ -282,9 +282,9 @@ body {
         }
         span {
             font-size: 16px;
+            font-weight: 800;
             color: #eb5a1e;
             margin: 0 18px 0 0;
-            font-weight: 800;
             b {
                 display: inline-block;
                 width: 23px;
@@ -292,6 +292,7 @@ body {
                 border-radius: 50%;
                 background-color: #eb5a1e;
                 color: #fff;
+                font-weight: 400;
             }
         }
         &:hover {

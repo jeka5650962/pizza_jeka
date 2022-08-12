@@ -22,7 +22,9 @@ function Categories() {
                 {categories.map((value, index) => {
                     return (
                         <li
-                            onClick={ () => {setActiveIndex(index)} }
+                            onClick={() => {
+                                setActiveIndex(index)
+                            }}
                             key={index}
                             className={activeIndex === index ? 'active' : ''}>{value}</li>
                     )
