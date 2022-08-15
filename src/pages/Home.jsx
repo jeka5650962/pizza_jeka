@@ -7,7 +7,6 @@ import PizzaBlock from "../components/PizzaBlock";
 const Home = () => {
 
     const [pizzas, setPizzas] = React.useState([])
-
     const [isLoading, setIsLoading] = React.useState(true)
 
     React.useEffect(() => {
@@ -36,4 +35,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

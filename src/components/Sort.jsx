@@ -3,16 +3,12 @@ import React from "react";
 function Sort() {
 
     const sortList = ['по популярности', 'по цене', 'по алфавиту']
-
     const [openedPopup, setOpenedPopup] = React.useState(false)
-
     const [selected, setSelected] = React.useState(0)
-
     const onClickItem = (index) => {
         setSelected(index)
         setOpenedPopup(false)
     }
-
     const chosenSort = sortList[selected]
 
     return (
