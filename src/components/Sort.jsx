@@ -1,15 +1,14 @@
 import React from "react";
 
-function Sort() {
+function Sort(props) {
 
     const sortList = ['по популярности', 'по цене', 'по алфавиту']
     const [openedPopup, setOpenedPopup] = React.useState(false)
-    const [selected, setSelected] = React.useState(0)
-    const onClickItem = (index) => {
-        setSelected(index)
+    const onClickItem = (id) => {
+        props.onClickSort(id)
         setOpenedPopup(false)
     }
-    const chosenSort = sortList[selected]
+    const chosenSort = sortList[props.value]
 
     return (
         <div className="filter__sort">
@@ -27,7 +26,7 @@ function Sort() {
                         <ul className="popup__list">
                             {
                                 sortList.map((name, index) =>
-                                    <li className={selected === index ? 'popup__item active' : 'popup__item'}
+                                    <li className={props.value === index ? 'popup__item active' : 'popup__item'}
                                         onClick={() => onClickItem(index)}
                                         key={index}>{name}
                                     </li>)
