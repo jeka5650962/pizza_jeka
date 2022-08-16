@@ -12,13 +12,14 @@ const Home = () => {
     const [sortType, setSortType] = React.useState(0)
 
     React.useEffect(() => {
-        fetch('https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas')
+        setIsLoading(true)
+        fetch('https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?category=' + category)
             .then(res => res.json())
             .then(json => {
                 setPizzas(json)
                 setIsLoading(false)
             })
-    }, [])
+    }, [category])
 
     return (
         <main className="content">
@@ -29,7 +30,7 @@ const Home = () => {
             <h1>Все пиццы</h1>
             <div className="content__body">
                 {
-                    isLoading ? [...new Array(8)].map((_, index) => <Skeleton
+                    isLoading ? [...new Array(4)].map((_, index) => <Skeleton
                         key={index}/>) : pizzas.map((obj, id) => <PizzaBlock {...obj} key={id}/>)
                 }
             </div>
