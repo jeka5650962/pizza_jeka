@@ -8,6 +8,7 @@ const Home = () => {
 
     const [pizzas, setPizzas] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
+    const [category, setCategory] = React.useState(0);
 
     React.useEffect(() => {
         fetch('https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas')
@@ -21,7 +22,7 @@ const Home = () => {
     return (
         <main className="content">
             <div className="filter">
-                <Categories/>
+                <Categories value={category} onClickCategory={(id) => setCategory(id)}/>
                 <Sort/>
             </div>
             <h1>Все пиццы</h1>
