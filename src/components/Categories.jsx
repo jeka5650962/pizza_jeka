@@ -1,6 +1,6 @@
 function Categories(props) {
 
-    const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+    const categories = ['Все', 'Мясные', 'Новые', 'Хит', 'Острые', 'Вегетарианские', 'Сырные'];
 
     return (
         <div className="filter__types types">
