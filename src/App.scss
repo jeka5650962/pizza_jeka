@@ -9,6 +9,9 @@ body {
 
 .wrapper {
     padding: 45px;
+    @media (max-width: 700px) {
+        padding: 20px;
+    }
 }
 
 .container {
@@ -17,6 +20,9 @@ body {
     max-width: 1340px;
     margin: 0 auto;
     padding: 50px;
+    @media (max-width: 700px) {
+        padding: 0 25px;
+    }
 }
 
 /* ----------------------------------------------------------------------------------------------------------- header */
@@ -130,14 +136,14 @@ body {
     &__types {}
     &__sort {
         svg {
-            margin: 0 7px 0 0;
+            margin: 0 0 0 7px;
+            rotate: 180deg;
         }
         b {
             margin: 0 8px 0 0;
         }
         span {
             color: #fe5f1e;
-            font-weight: 400;
             border-bottom: 1px dashed #fe5f1e;
             cursor: pointer;
             &:hover + .popup {
