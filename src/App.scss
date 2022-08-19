@@ -9,20 +9,14 @@ body {
 
 .wrapper {
     padding: 45px;
-    @media (max-width: 700px) {
-        padding: 20px;
-    }
 }
 
 .container {
-    background-color: #fff;
-    border-radius: 10px;
     max-width: 1340px;
     margin: 0 auto;
     padding: 50px;
-    @media (max-width: 700px) {
-        padding: 0 25px;
-    }
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 /* ----------------------------------------------------------------------------------------------------------- header */
@@ -33,34 +27,35 @@ body {
     padding: 0 0 35px 0;
     margin: 0 0 40px 0;
     border-bottom: 1px solid #dadada;
+
     &__logo {
-        @media (max-width: 700px) {
-            margin: 0 0 20px 0;
-        }
     }
-    &__info {}
-    @media (max-width: 700px) {
-        display: block;
-    }
-    @media (max-width: 700px) {
-        padding: 40px 0 25px 0;
+
+    &__info {
     }
 }
 
 .logo {
     display: flex;
     align-items: center;
-    &__image {}
-    img {}
+
+    &__image {
+    }
+
+    img {
+    }
+
     &__text {
         margin: 0 0 0 17px;
     }
+
     &__title {
         font-size: 24px;
         font-weight: 900;
         color: #181818;
         text-transform: uppercase;
     }
+
     &__subtitle {
         font-size: 16px;
         font-weight: 400;
@@ -79,17 +74,21 @@ body {
         height: 50px;
         border-radius: 30px;
         transition: background-color 0.3s ease 0s;
+
         &:hover {
             background-color: #dc1f00;
         }
+
         span {
             font-size: 16px;
             color: #fff;
         }
+
         svg {
             margin: 0 8px 0 0;
         }
     }
+
     &__delimiter {
         width: 1px;
         height: 25px;
@@ -102,24 +101,18 @@ body {
 
 .content {
     position: relative;
+
     &__body {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(1, 1fr);
         justify-items: center;
-        @media (max-width: 1420px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @media (max-width: 1150px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @media (max-width: 800px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
+        gap: 50px 20px;
     }
+
     &__column {
-        margin: 0 0 65px 0;
     }
+
     h1 {
         font-size: 32px;
         font-weight: 800;
@@ -133,26 +126,29 @@ body {
     align-items: center;
     margin: 0 0 40px 0;
     flex-wrap: wrap;
-    &__types {}
+
+    &__types {
+    }
+
     &__sort {
         svg {
             margin: 0 0 0 7px;
             rotate: 180deg;
         }
+
         b {
             margin: 0 8px 0 0;
         }
+
         span {
             color: #fe5f1e;
             border-bottom: 1px dashed #fe5f1e;
             cursor: pointer;
+
             &:hover + .popup {
                 display: inline-block;
             }
         }
-    }
-    @media (max-width: 1150px) {
-        display: block;
     }
 }
 
@@ -161,6 +157,7 @@ body {
     top: 40px;
     right: 0;
     z-index: 10;
+
     &__list {
         background-color: #fff;
         border-radius: 10px;
@@ -168,18 +165,22 @@ body {
         overflow: hidden;
         min-width: 150px;
     }
+
     &__item {
         font-weight: 400;
         line-height: 20px;
         padding: 10px 14px;
         cursor: pointer;
+
         &:hover {
             background-color: rgba(254, 95, 30, 0.1);
         }
+
         &.active {
             font-weight: 700;
             color: #fe5f1e;
         }
+
         &:last-child {
             margin: 0;
         }
@@ -189,6 +190,7 @@ body {
 .types {
     &__list {
         display: flex;
+
         li {
             margin: 0 10px 0 0;
             cursor: pointer;
@@ -199,20 +201,15 @@ body {
             border-radius: 30px;
             padding: 10px 20px;
             transition: background-color 0.3s ease 0s;
+
             &:hover {
                 background-color: #e5e5e5;
             }
+
             &.active {
                 background-color: #282828;
                 color: #fff;
             }
-            @media (max-width: 1150px) {
-                margin: 0 10px 20px 0;
-            }
-        }
-        @media (max-width: 1150px) {
-            display: flex;
-            flex-wrap: wrap;
         }
     }
 }
@@ -221,14 +218,17 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease 0s;
+
     &__image {
         display: flex;
         justify-content: center;
         margin: 0 0 10px 0;
+
         img {
             max-width: 260px;
         }
     }
+
     &__name {
         font-size: 20px;
         font-weight: 800;
@@ -236,21 +236,26 @@ body {
         text-align: center;
         margin: 0 0 22px 0;
     }
+
     &__options {
         width: 280px;
         background-color: #e5e5e5;
         border-radius: 10px;
         margin: 0 0 17px 0;
     }
+
     .options {
         padding: 7px;
+
         &__dough {
             display: flex;
             margin: 0 0 7px 0;
         }
+
         &__diameter {
             display: flex;
         }
+
         li {
             flex: 1 1 auto;
             font-weight: 800;
@@ -259,6 +264,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+
             &.active {
                 background-color: #fff;
                 border: 1px solid #fff;
@@ -266,31 +272,39 @@ body {
             }
         }
     }
+
     &__bottom {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     &__price {
         font-size: 18px;
         font-weight: 800;
         color: #000;
     }
+
     &__add {
         height: 40px;
         border-radius: 30px;
         background-color: #fff;
         border: 1px solid #eb5a1e;
         transition: all 0.3s ease 0s;
+
         svg {
             margin: 0 7px 0 18px;
-            path {}
+
+            path {
+            }
         }
+
         span {
             font-size: 16px;
             font-weight: 800;
             color: #eb5a1e;
             margin: 0 18px 0 0;
+
             b {
                 display: inline-block;
                 width: 23px;
@@ -301,23 +315,27 @@ body {
                 font-weight: 400;
             }
         }
+
         &:hover {
             background-color: #eb5a1e;
         }
+
         &:hover span {
             color: #fff;
         }
+
         &:hover span b {
             color: #eb5a1e;
             background-color: #fff;
         }
+
         &:hover svg path {
             fill: #fff;
         }
     }
+
     &:hover {
         transform: scale(1.05);
         cursor: pointer;
     }
 }
-
