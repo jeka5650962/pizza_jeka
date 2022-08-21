@@ -2,23 +2,41 @@
     max-width: 830px;
     margin: 0 auto;
     padding: 54px 0;
+    @media (max-width: 1080px) {
+        padding: 0;
+    }
 }
 
 .topInfo {
     display: flex;
     justify-content: space-between;
     margin: 0 0 30px 0;
+    @media (max-width: 345px) {
+        flex-direction: column;
+        margin: 0 0 20px 0;
+    }
 
     .left {
         display: flex;
+        @media (max-width: 345px) {
+            margin: 0 0 10px 0;
+        }
 
         svg {
             margin: 0 17px 0 0;
+            @media (max-width: 768px) {
+                width: 25px;
+                height: 25px;
+                margin: 0 10px 0 0;
+            }
         }
 
         h1 {
             font-size: 32px;
             font-weight: 800;
+            @media (max-width: 768px) {
+                font-size: 26px;
+            }
         }
     }
 
@@ -33,12 +51,19 @@
 
         svg {
             margin: 0 7px 0 0;
+            @media (max-width: 768px) {
+                width: 18px;
+                height: 18px;
+            }
         }
 
         span {
             font-size: 16px;
             font-weight: 400;
             color: #b6b6b6;
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -68,6 +93,9 @@
                 font-size: 22px;
                 line-height: 27px;
                 font-weight: 800;
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                }
             }
 
             span {
@@ -75,7 +103,15 @@
                 line-height: 22px;
                 font-weight: 400;
                 color: #8d8d8d;
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
             }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            flex: 1 1 auto;
         }
     }
 
@@ -106,12 +142,18 @@
             font-size: 22px;
             font-weight: 800;
             margin: 0 12px;
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
         }
     }
 
     .price {
         font-size: 22px;
         font-weight: 800;
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
     }
 
     .remove {
@@ -130,6 +172,10 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
 }
 
 .total {
@@ -138,6 +184,13 @@
     font-size: 22px;
     font-weight: 600;
     margin: 0 0 40px 0;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+        line-height: 1.3;
+    }
 
     .left {
         span {
@@ -156,6 +209,9 @@
 .bottom {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 430px) {
+        flex-direction: column-reverse;
+    }
 
     .left {
         button {
@@ -166,6 +222,9 @@
             border-radius: 30px;
             padding: 15px 30px;
             transition: all 0.3s ease 0s;
+            @media (max-width: 520px) {
+                padding: 10px 20px;
+            }
 
             &:hover {
                 background-color: #d3d3d3;
@@ -186,11 +245,17 @@
             span {
                 font-size: 16px;
                 color: #cacaca;
+                @media (max-width: 520px) {
+                    font-size: 14px;
+                }
             }
         }
     }
 
     .right {
+        @media (max-width: 430px) {
+            margin: 0 0 10px 0;
+        }
         button {
             background-color: #fe5f1e;
             border: 1px solid #fe5f1e;
@@ -200,6 +265,10 @@
             color: #fff;
             font-weight: 700;
             transition: all 0.3s ease 0s;
+            @media (max-width: 520px) {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
 
             &:hover {
                 background-color: #fff;
