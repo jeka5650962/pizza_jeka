@@ -13,7 +13,9 @@ const Home = () => {
 
     React.useEffect(() => {
         setIsLoading(true)
-        fetch('https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?category=' + category)
+        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?${
+            category > 0 ? `category=${category}` : ``
+        }`)
             .then(res => res.json())
             .then(json => {
                 setPizzas(json)
