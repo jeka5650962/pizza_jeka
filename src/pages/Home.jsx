@@ -9,19 +9,19 @@ const Home = () => {
     const [pizzas, setPizzas] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
     const [category, setCategory] = React.useState(0)
-    const [sortType, setSortType] = React.useState(0)
+    const [sortType, setSortType] = React.useState({name: "популярные", sortProperty: "rating", orderProperty: "desc"})
 
     React.useEffect(() => {
         setIsLoading(true)
-        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas${
-            category > 0 ? `?category=${category}` : ``
-        }`)
+        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?${
+            category > 0 ? `category=${category}` : ``
+        }&sortBy=${sortType.sortProperty}&order=${sortType.orderProperty}`)
             .then(res => res.json())
             .then(json => {
                 setPizzas(json)
                 setIsLoading(false)
             })
-    }, [category])
+    }, [category, sortType])
 
     return (
         <main className="content">

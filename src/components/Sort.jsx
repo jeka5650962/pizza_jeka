@@ -2,18 +2,34 @@ import React from "react";
 
 function Sort(props) {
 
-    const sortList = ['популярные', 'дешевые', 'дорогие']
+    const sortList = [
+        {
+            name: "популярные",
+            sortProperty: "rating",
+            orderProperty: "desc"
+        },
+        {
+            name: "дешевые",
+            sortProperty: "price",
+            orderProperty: "asc"
+        },
+        {
+            name: "дорогие",
+            sortProperty: "price",
+            orderProperty: "desc"
+        }
+    ]
     const [openedPopup, setOpenedPopup] = React.useState(false)
     const onClickItem = (id) => {
         props.onClickSort(id)
         setOpenedPopup(false)
     }
-    const chosenSort = sortList[props.value]
+    // const chosenSort = sortList[props.value].name
 
     return (
         <div className="filter__sort">
             <b>Сначала</b>
-            <span onClick={() => setOpenedPopup(!openedPopup)}>{chosenSort}</span>
+            <span onClick={() => setOpenedPopup(!openedPopup)}>{props.value.name}</span>
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -25,10 +41,10 @@ function Sort(props) {
                     <div className="popup">
                         <ul className="popup__list">
                             {
-                                sortList.map((name, index) =>
-                                    <li className={props.value === index ? 'popup__item active' : 'popup__item'}
-                                        onClick={() => onClickItem(index)}
-                                        key={index}>{name}
+                                sortList.map((obj, index) =>
+                                    <li className={props.value.sortProperty === obj.sortProperty ? 'popup__item active' : 'popup__item'}
+                                        onClick={() => onClickItem(obj)}
+                                        key={index}>{obj.name}
                                     </li>)
                             }
                         </ul>
