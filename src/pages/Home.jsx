@@ -9,7 +9,12 @@ const Home = () => {
     const [pizzas, setPizzas] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
     const [category, setCategory] = React.useState(0)
-    const [sortType, setSortType] = React.useState({name: "популярные", sortProperty: "rating", orderProperty: "desc"})
+    const [sortType, setSortType] = React.useState({
+        id: 0,
+        name: "популярные",
+        sortProperty: "rating",
+        orderProperty: "desc"
+    })
 
     React.useEffect(() => {
         setIsLoading(true)

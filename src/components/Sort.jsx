@@ -4,16 +4,19 @@ function Sort(props) {
 
     const sortList = [
         {
+            id: 0,
             name: "популярные",
             sortProperty: "rating",
             orderProperty: "desc"
         },
         {
+            id: 1,
             name: "дешевые",
             sortProperty: "price",
             orderProperty: "asc"
         },
         {
+            id: 2,
             name: "дорогие",
             sortProperty: "price",
             orderProperty: "desc"
@@ -42,7 +45,7 @@ function Sort(props) {
                         <ul className="popup__list">
                             {
                                 sortList.map((obj, index) =>
-                                    <li className={props.value.sortProperty === obj.sortProperty ? 'popup__item active' : 'popup__item'}
+                                    <li className={props.value.id === obj.id ? 'popup__item active' : 'popup__item'}
                                         onClick={() => onClickItem(obj)}
                                         key={index}>{obj.name}
                                     </li>)
