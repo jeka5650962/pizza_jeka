@@ -2,7 +2,7 @@ import logo from '../assets/img/logo.png';
 import {Link} from "react-router-dom";
 import Search from "./Search";
 
-function Header() {
+function Header({searchValue, setSearchValue}) {
     return (
         <header className="header">
             <Link to="/" className="header__logo logo">
@@ -14,7 +14,7 @@ function Header() {
                     <div className="logo__subtitle">самая вкусная пицца во вселенной</div>
                 </div>
             </Link>
-            <Search/>
+            <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
             <div className="header__info info">
                 <Link to="/cart" className="info__button">
                     <span>520 ₽</span>
