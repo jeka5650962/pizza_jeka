@@ -4,7 +4,7 @@ import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 
-const Home = ({searchValue, setSearchValue}) => {
+const Home = ({searchValue}) => {
 
     const [pizzas, setPizzas] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
@@ -29,7 +29,7 @@ const Home = ({searchValue, setSearchValue}) => {
                 setPizzas(json)
                 setIsLoading(false)
             })
-    }, [category, sortType, searchValue])
+    }, [categoryQuery, sortByQuery, orderQuery, searchQuery])
 
     const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>)
     const pizzaBlocks = pizzas.map((obj, id) => <PizzaBlock {...obj} key={id}/>)
