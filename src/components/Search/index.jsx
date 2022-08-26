@@ -17,7 +17,7 @@ const Search = ({searchValue, setSearchValue}) => {
                 </svg>
             }
             <input value={searchValue} onChange={event => setSearchValue(event.target.value)}
-                   placeholder="Поиск пицц ..."/>
+                   placeholder="Найти пиццу ..."/>
         </div>
     )
 }
