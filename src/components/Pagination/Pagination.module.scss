@@ -3,6 +3,7 @@
 
     .list {
         display: flex;
+        flex-wrap: wrap;
 
         li {
             display: flex;
@@ -13,19 +14,13 @@
             margin: 0 10px 0 0;
             cursor: pointer;
             border-radius: 50%;
-
-            span {
-                font-size: 16px;
-                font-weight: 600;
-                color: #838383;
-            }
+            font-size: 16px;
+            font-weight: 600;
+            color: #838383;
 
             &.active {
                 background-color: #fe5f1e;
-
-                span {
-                    color: #fff;
-                }
+                color: #fff;
             }
 
             &:last-child {

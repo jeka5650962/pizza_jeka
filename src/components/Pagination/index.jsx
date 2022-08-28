@@ -15,7 +15,7 @@ const Pagination = () => {
                             key={index}
                             className={activePage === index ? styles.active : ''}
                             onClick={() => setActivePage(index)}
-                        ><span>{item}</span></li>
+                        >{item}</li>
                     ))
                 }
             </ul>
