@@ -3,6 +3,7 @@ import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
+import Pagination from "../components/Pagination";
 
 const Home = ({searchValue}) => {
 
@@ -46,6 +47,7 @@ const Home = ({searchValue}) => {
                     isLoading ? skeletons : pizzaBlocks
                 }
             </div>
+            <Pagination/>
         </main>
     )
 }

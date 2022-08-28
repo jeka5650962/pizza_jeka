@@ -1,0 +1,44 @@
+.pagination {
+    margin: 40px 0 0 0;
+
+    .list {
+        display: flex;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px 0 0;
+            cursor: pointer;
+            border-radius: 50%;
+
+            span {
+                font-size: 16px;
+                font-weight: 600;
+                color: #838383;
+            }
+
+            &.active {
+                background-color: #fe5f1e;
+
+                span {
+                    color: #fff;
+                }
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover {
+                border: 1px solid #fe5f1e;
+
+                span {
+                    color: #fe5f1e;
+                }
+            }
+        }
+    }
+}
