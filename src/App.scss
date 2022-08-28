@@ -395,11 +395,15 @@ body {
                 align-items: center;
                 width: 24px;
                 height: 24px;
+                border: 1px solid #eb5a1e;
                 border-radius: 50%;
-                background-color: #eb5a1e;
-                color: #fff;
                 font-size: 13px;
                 font-weight: 600;
+
+                &.added {
+                    background-color: #eb5a1e;
+                    color: #fff;
+                }
             }
         }
 
