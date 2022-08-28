@@ -390,7 +390,7 @@ body {
             margin: 0 18px 0 0;
 
             b {
-                display: inline-flex;
+                display: none;
                 justify-content: center;
                 align-items: center;
                 width: 24px;
@@ -399,10 +399,11 @@ body {
                 border-radius: 50%;
                 font-size: 13px;
                 font-weight: 600;
+                background-color: #eb5a1e;
+                color: #fff;
 
                 &.added {
-                    background-color: #eb5a1e;
-                    color: #fff;
+
                 }
             }
         }
