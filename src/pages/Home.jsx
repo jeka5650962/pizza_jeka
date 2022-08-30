@@ -23,7 +23,7 @@ const Home = ({searchValue}) => {
     const sortByQuery = sortType.sortProperty
     const orderQuery = sortType.orderProperty
     const searchQuery = searchValue ? `search=${searchValue}` : ''
-    const itemsPerPage = 8
+    const itemsPerPage = 4
 
     React.useEffect(() => {
         setIsLoading(true)

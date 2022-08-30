@@ -8,7 +8,7 @@ const Paginate = ({onChangePage, pizzasCount, itemsPerPage}) => {
             breakLabel="..."
             nextLabel=">"
             onPageChange={event => onChangePage(event.selected + 1)}
-            pageRangeDisplayed={8}
+            pageRangeDisplayed={4}
             pageCount={Math.ceil(pizzasCount / itemsPerPage)}
             previousLabel="<"
             renderOnZeroPageCount={null}
