@@ -4,6 +4,7 @@ import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
+import Paginate from "../components/Paginate";
 
 const Home = ({searchValue}) => {
 
@@ -16,6 +17,7 @@ const Home = ({searchValue}) => {
         sortProperty: "rating",
         orderProperty: "desc"
     })
+    const [currentPage, setCurrentPage] = React.useState(1)
 
     const categoryQuery = category > 0 ? `category=${category}` : ``
     const sortByQuery = sortType.sortProperty
@@ -24,13 +26,13 @@ const Home = ({searchValue}) => {
 
     React.useEffect(() => {
         setIsLoading(true)
-        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?${categoryQuery}&sortBy=${sortByQuery}&order=${orderQuery}&${searchQuery}`)
+        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?page=${currentPage}&limit=4&${categoryQuery}&sortBy=${sortByQuery}&order=${orderQuery}&${searchQuery}`)
             .then(res => res.json())
             .then(json => {
                 setPizzas(json)
                 setIsLoading(false)
             })
-    }, [categoryQuery, sortByQuery, orderQuery, searchQuery])
+    }, [categoryQuery, sortByQuery, orderQuery, searchQuery, currentPage])
 
     const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>)
     const pizzaBlocks = pizzas.map((obj, id) => <PizzaBlock {...obj} key={id}/>)
@@ -47,7 +49,8 @@ const Home = ({searchValue}) => {
                     isLoading ? skeletons : pizzaBlocks
                 }
             </div>
-            <Pagination/>
+            {/*<Pagination/>*/}
+            <Paginate onChangePage={number => setCurrentPage(number)}/>
         </main>
     )
 }
