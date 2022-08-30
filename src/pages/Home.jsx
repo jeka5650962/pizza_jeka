@@ -3,7 +3,6 @@ import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
-import Pagination from "../components/Pagination";
 import Paginate from "../components/Paginate";
 
 const Home = ({searchValue}) => {
@@ -18,6 +17,7 @@ const Home = ({searchValue}) => {
         orderProperty: "desc"
     })
     const [currentPage, setCurrentPage] = React.useState(1)
+    const [pizzasCount, setPizzasCount] = React.useState(0)
 
     const categoryQuery = category > 0 ? `category=${category}` : ``
     const sortByQuery = sortType.sortProperty
@@ -29,7 +29,8 @@ const Home = ({searchValue}) => {
         fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?page=${currentPage}&limit=4&${categoryQuery}&sortBy=${sortByQuery}&order=${orderQuery}&${searchQuery}`)
             .then(res => res.json())
             .then(json => {
-                setPizzas(json)
+                setPizzas(json.items)
+                setPizzasCount(json.count)
                 setIsLoading(false)
             })
     }, [categoryQuery, sortByQuery, orderQuery, searchQuery, currentPage])
@@ -49,8 +50,7 @@ const Home = ({searchValue}) => {
                     isLoading ? skeletons : pizzaBlocks
                 }
             </div>
-            {/*<Pagination/>*/}
-            <Paginate onChangePage={number => setCurrentPage(number)}/>
+            <Paginate onChangePage={number => setCurrentPage(number)} pizzasCount={pizzasCount}/>
         </main>
     )
 }
