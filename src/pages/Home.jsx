@@ -23,16 +23,18 @@ const Home = ({searchValue}) => {
     const sortByQuery = sortType.sortProperty
     const orderQuery = sortType.orderProperty
     const searchQuery = searchValue ? `search=${searchValue}` : ''
+    const itemsPerPage = 8
 
     React.useEffect(() => {
         setIsLoading(true)
-        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?page=${currentPage}&limit=4&${categoryQuery}&sortBy=${sortByQuery}&order=${orderQuery}&${searchQuery}`)
+        fetch(`https://62ec9a5955d2bd170e834d23.mockapi.io/pizzas?page=${currentPage}&limit=${itemsPerPage}&${categoryQuery}&sortBy=${sortByQuery}&order=${orderQuery}&${searchQuery}`)
             .then(res => res.json())
             .then(json => {
                 setPizzas(json.items)
                 setPizzasCount(json.count)
                 setIsLoading(false)
             })
+        window.scrollTo(0, 0)
     }, [categoryQuery, sortByQuery, orderQuery, searchQuery, currentPage])
 
     const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>)
@@ -50,7 +52,9 @@ const Home = ({searchValue}) => {
                     isLoading ? skeletons : pizzaBlocks
                 }
             </div>
-            <Paginate onChangePage={number => setCurrentPage(number)} pizzasCount={pizzasCount}/>
+            <Paginate onChangePage={number => setCurrentPage(number)}
+                      pizzasCount={pizzasCount}
+                      itemsPerPage={itemsPerPage}/>
         </main>
     )
 }
